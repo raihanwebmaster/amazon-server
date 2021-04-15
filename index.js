@@ -11,7 +11,9 @@ const port = 5000;
 const stripe = require("stripe")(process.env.STRIPE_TEST);
 
 const uri = ` mongodb+srv://${process.env.MONGO_DB_USER}:${process.env.MONGO_DB_PASS}@cluster0.giumd.mongodb.net/${process.env.MONGO_DB_DATABASE}?retryWrites=true&w=majority`;
-
+app.get('/', (req, res) =>{
+    res.send("hello from db it's working working")
+})
 
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
